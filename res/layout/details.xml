@@ -39,7 +39,7 @@
                 android:id="@+id/lableFather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Father:"
+                android:text="Father/Husband:"
                 android:textSize="20sp" />
 
             <TextView

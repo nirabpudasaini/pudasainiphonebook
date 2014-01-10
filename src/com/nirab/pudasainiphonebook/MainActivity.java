@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-
 
 public class MainActivity extends ListActivity {
 
@@ -39,10 +41,10 @@ public class MainActivity extends ListActivity {
 		i.putExtra("ADDRESS", address);
 		i.putExtra("PHONE", phone);
 		startActivity(i);
-//		Toast.makeText(
-//				this,
-//				"Name:" + name + "\nFather:" + father + "\nAddress:" + address
-//						+ "\nPhone Number:" + phone, Toast.LENGTH_SHORT).show();
+		// Toast.makeText(
+		// this,
+		// "Name:" + name + "\nFather:" + father + "\nAddress:" + address
+		// + "\nPhone Number:" + phone, Toast.LENGTH_SHORT).show();
 
 	}
 
@@ -57,6 +59,26 @@ public class MainActivity extends ListActivity {
 				from, to, 0);
 
 		setListAdapter(adapter);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu items for use in the action bar
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main_activity_main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle presses on the action bar items
+		switch (item.getItemId()) {
+		case R.id.action_search:
+			//TODO the search code goes here
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }
